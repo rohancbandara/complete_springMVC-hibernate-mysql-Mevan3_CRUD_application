@@ -20,7 +20,7 @@ public class ViewController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getWelcomePage() {
-		return "welcome2";
+		return "welcome";
 	}
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
@@ -35,6 +35,11 @@ public class ViewController {
 
 	@RequestMapping(value = "/loginRedirect", method = RequestMethod.POST)
 	public String LOaginPage() {
+		return "Login";
+	}
+
+	@RequestMapping(value = "/log", method = RequestMethod.GET)
+	public String geLogPage() {
 		return "Login";
 	}
 
