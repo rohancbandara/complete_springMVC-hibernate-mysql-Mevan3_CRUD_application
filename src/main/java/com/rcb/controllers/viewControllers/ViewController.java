@@ -55,4 +55,14 @@ public class ViewController {
 		return status ? "redirect:/registration" : "redirect:/error";
 	}
 
+	@RequestMapping(value = "/docterAdd", method = RequestMethod.GET)
+	public String getDocterAddPage() {
+		return "DocterAdd";
+	}
+
+	@RequestMapping(value = "/docterList", method = RequestMethod.GET)
+	public String getDocterListPage() {
+		return "DocterList";
+	}
+
 }

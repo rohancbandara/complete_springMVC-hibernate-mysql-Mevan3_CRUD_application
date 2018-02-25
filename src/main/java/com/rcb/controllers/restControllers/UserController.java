@@ -21,25 +21,26 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@PostMapping("/saveUpdate")
-	public ResponseEntity<CustomizedResponse> saveUpdateUser (@RequestBody UserDTO user) { 
+	public ResponseEntity<CustomizedResponse> saveUpdateUser(@RequestBody UserDTO user) {
 		return new ResponseEntity<CustomizedResponse>(userService.saveUpdateUser(user), HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/get")
-	public ResponseEntity<CustomizedResponse> findUserById (@RequestParam("userId") String userId) { 
+	public ResponseEntity<CustomizedResponse> findUserById(@RequestParam("userId") String userId) {
 		return new ResponseEntity<CustomizedResponse>(userService.findUserById(Long.parseLong(userId)), HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/getAll")
-	public ResponseEntity<CustomizedResponse> getAll () { 
+	public ResponseEntity<CustomizedResponse> getAll() {
 		return new ResponseEntity<CustomizedResponse>(userService.getAll(), HttpStatus.OK);
 	}
-	
+
 	@DeleteMapping("/delete")
-	public ResponseEntity<CustomizedResponse> deleteUserById (@RequestParam("userId") String userId) { 
-		return new ResponseEntity<CustomizedResponse>(userService.deleteUserById(Long.parseLong(userId)), HttpStatus.OK);
+	public ResponseEntity<CustomizedResponse> deleteUserById(@RequestParam("userId") String userId) {
+		return new ResponseEntity<CustomizedResponse>(userService.deleteUserById(Long.parseLong(userId)),
+				HttpStatus.OK);
 	}
 
 }
